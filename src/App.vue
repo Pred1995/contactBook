@@ -1,32 +1,37 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div class="todo">
+      <div class="todo__header">
+        <router-link to="/">
+          <h4>Контакты</h4>
+        </router-link>
+      </div>
+      <router-view @openModalWindow="openModalWindow" />
     </div>
-    <router-view />
+    <v-form :key="show" :show="show" @closeModalWindow="closeModalWindow" />
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
+<script>
+import VForm from "@/components/v-form";
+export default {
+  name: "App",
+  data: () => ({
+    show: false
+  }),
+  methods: {
+    openModalWindow() {
+      this.show = true;
+    },
+    closeModalWindow() {
+      this.show = false;
     }
-  }
-}
+  },
+  components: { VForm }
+};
+</script>
+
+<style>
+@import "./assets/app.css";
+@import "./assets/snip.scss";
 </style>
