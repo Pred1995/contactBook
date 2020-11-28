@@ -40,7 +40,7 @@ a {
 body {
   background-color: #fafafa;
 }
-.todo {
+.contact {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -55,22 +55,22 @@ body {
   overflow: hidden;
   border: 1px solid #ebebeb;
 }
-.todo__header {
+.contact__header {
   background-color: #db4c3f;
   padding: 20px 30px;
 }
-.todo__header h4 {
+.contact__header h4 {
   color: #fff;
   font-size: 22px;
   font-weight: 500;
 }
-.todo__add-field {
+.contact__add-field {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   border-bottom: 1px solid #f4f4f4;
 }
-.todo__add-field input {
+.contact__add-field input {
   border: 0;
   font-size: 18px;
   padding: 20px;
@@ -78,19 +78,19 @@ body {
   -ms-flex: 1;
   flex: 1;
 }
-.todo__add-field input::-webkit-input-placeholder {
+.contact__add-field input::-webkit-input-placeholder {
   color: #bfbfbf;
 }
-.todo__add-field input:-ms-input-placeholder {
+.contact__add-field input:-ms-input-placeholder {
   color: #bfbfbf;
 }
-.todo__add-field input::-ms-input-placeholder {
+.contact__add-field input::-ms-input-placeholder {
   color: #bfbfbf;
 }
-.todo__add-field input::placeholder {
+.contact__add-field input::placeholder {
   color: #bfbfbf;
 }
-.todo__add-field-button {
+.contact__add-field-button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -106,34 +106,34 @@ body {
   height: 65px;
   cursor: pointer;
 }
-.todo__add-field-button svg {
+.contact__add-field-button svg {
   position: relative;
   right: -1px;
 }
-.todo__add-field-button:hover {
+.contact__add-field-button:hover {
   background-color: #fbfbfb;
 }
-.todo__add-field-button:hover svg path {
+.contact__add-field-button:hover svg path {
   fill: #202020;
 }
-.todo__list-item {
+.contact__list-item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   padding: 20px;
   border-bottom: 1px solid #f4f4f4;
 }
-.todo__list-item--completed {
+.contact__list-item--completed {
   text-decoration: line-through;
 }
-.todo__list-item--completed .todo__list-item-check svg {
+.contact__list-item--completed .contact__list-item-check svg {
   display: block;
 }
-.todo__list-item--completed .todo__list-item-check,
-.todo__list-item--completed .todo__list-item-check:hover {
+.contact__list-item--completed .contact__list-item-check,
+.contact__list-item--completed .contact__list-item-check:hover {
   background-color: #db4c3f;
 }
-.todo__list-item-check {
+.contact__list-item-check {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -150,25 +150,25 @@ body {
   margin-right: 15px;
   cursor: pointer;
 }
-.todo__list-item-check svg {
+.contact__list-item-check svg {
   display: none;
 }
-.todo__list-item-check:hover {
+.contact__list-item-check:hover {
   background-color: #f8e0de;
 }
-.todo__list-item-remove:hover {
+.contact__list-item-remove:hover {
   cursor: pointer;
 }
-.todo__list-item-remove:hover svg path {
+.contact__list-item-remove:hover svg path {
   fill: #202020;
 }
-.todo__list-item p {
+.contact__list-item p {
   font-size: 18px;
   -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
 }
-.todo__list {
+.contact__list {
   overflow: auto;
   height: calc(100% - 136px);
   color: black;

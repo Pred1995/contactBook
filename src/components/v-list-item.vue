@@ -1,9 +1,9 @@
 <template>
-  <div class="todo__list-item">
+  <div class="contact__list-item">
     <p @click="openContact(index)">{{ text }}</p>
     <img
       @click="removeContact(index)"
-      class="todo__list-item-remove"
+      class="contact__list-item-remove"
       src="../assets/delete.svg"
       alt="icon"
     />

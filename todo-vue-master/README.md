@@ -1,4 +1,4 @@
-# todo-vue
+# contact-vue
 
 ## Project setup
 ```

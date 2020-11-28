@@ -1,12 +1,12 @@
 <template>
   <!-- Сравнить бандлы всех тудушек на разных фреймворках -->
   <div id="app">
-    <div class="todo">
-      <div class="todo__header">
+    <div class="contact">
+      <div class="contact__header">
         <h4>Список задач</h4>
       </div>
       <TaskField @onAddTask="onAddTask" />
-      <div class="todo__list">
+      <div class="contact__list">
         <ListItem
           v-for="(task, index) in tasks"
           :key="index"
@@ -34,7 +34,7 @@ export default {
         completed: true,
       },
       {
-        text: "Разработать ToDo на VueJS",
+        text: "Разработать contact на VueJS",
         completed: false,
       },
     ],

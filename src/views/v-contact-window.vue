@@ -14,7 +14,7 @@
         class="input-test"
         v-model="text"
         type="text"
-        placeholder="Введите название новой задачи в форате ключ:значение"
+        placeholder="Введите ключ:значение"
       />
     </div>
     <div class="contact-window__add">
@@ -110,6 +110,10 @@ export default {
         this.lastAction = "addContact";
         this.lastText = this.text;
         this.text = "";
+      } else {
+        alert(
+          "Введите текст в формате ключ:значение, например: email:test@mail.ru"
+        );
       }
     },
     async deleteItem(index) {
@@ -133,7 +137,7 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 .btn-test {
   font-size: 12px;
   min-width: 100px;

@@ -1,13 +1,4 @@
-const ContactModel = {
-  id: null,
-  name: null,
-  mobile: null
-};
-
 const state = {
-  model: {
-    ...ContactModel
-  },
   items: [
     {
       id: Math.random(),
@@ -75,7 +66,7 @@ export default {
         console.log(e);
         throw e;
       }
-    },
+    }
   },
   mutations: {
     addContact(state, value) {
@@ -88,7 +79,7 @@ export default {
     deleteContact(state, payload) {
       state.items = state.items.filter(c => c.id !== payload);
     },
-    deleteItemContact(state, {index, id}) {
+    deleteItemContact(state, { index, id }) {
       const idx = state.items.findIndex(c => c.id === id);
       state.items[idx].tasks.splice(index, 1);
     },
@@ -98,7 +89,6 @@ export default {
     },
     updateItemContact(state, { id, index, updateText }) {
       const idx = state.items.findIndex(c => c.id === id);
-      console.log(state.items[idx]);
       state.items[idx].tasks[index] = updateText;
     }
   }

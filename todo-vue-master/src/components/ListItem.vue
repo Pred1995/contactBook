@@ -1,6 +1,6 @@
 <template>
-  <div class="todo__list-item" v-bind:class="{'todo__list-item--completed': completed}">
-    <div @click="toggleCompleted(index)" class="todo__list-item-check">
+  <div class="contact__list-item" v-bind:class="{'contact__list-item--completed': completed}">
+    <div @click="toggleCompleted(index)" class="contact__list-item-check">
       <svg width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
@@ -11,7 +11,7 @@
       </svg>
     </div>
     <p>{{ text }}</p>
-    <div @click="removeTask(index)" class="todo__list-item-remove">
+    <div @click="removeTask(index)" class="contact__list-item-remove">
       <svg
         width="20"
         height="21"

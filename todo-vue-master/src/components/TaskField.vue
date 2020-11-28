@@ -1,7 +1,7 @@
 <template>
-  <div class="todo__add-field">
+  <div class="contact__add-field">
     <input @keyup.13="addTask" v-model="text" type="text" placeholder="Введите текст задачи..." />
-    <button @click="addTask" class="todo__add-field-button">
+    <button @click="addTask" class="contact__add-field-button">
       <svg
         width="18"
         height="18"

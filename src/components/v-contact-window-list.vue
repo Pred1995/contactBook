@@ -1,16 +1,19 @@
 <template>
-  <div class="todo__list-item">
+  <div class="contact__list-item">
     <template v-if="edit">
       <input v-model="updateText" type="text" />
       <img
-        @click="edit = false"
-        class="todo__list-item-edit"
+        @click="
+          edit = false;
+          updateText = item;
+        "
+        class="contact__list-item-edit"
         src="../assets/close.svg"
         alt="icon"
       />
       <img
         @click="updateItemContact"
-        class="todo__list-item-remove"
+        class="contact__list-item-remove"
         src="../assets/ok-mark.svg"
         alt="icon"
       />
@@ -18,14 +21,17 @@
     <template v-else>
       <p>{{ item }}</p>
       <img
-        @click="edit = true"
-        class="todo__list-item-edit"
+        @click="
+          edit = true;
+          updateText = item;
+        "
+        class="contact__list-item-edit"
         src="../assets/edit.svg"
         alt="icon"
       />
       <img
         @click="deleteItemContact(index)"
-        class="todo__list-item-remove"
+        class="contact__list-item-remove"
         src="../assets/delete.svg"
         alt="icon"
       />

@@ -1,6 +1,6 @@
 <template>
-  <div class="todo__add-field">
-    <button @click="openModalWindow" class="todo__add-field-button">
+  <div class="contact__add-field">
+    <button @click="openModalWindow" class="contact__add-field-button">
       <svg
         width="18"
         height="18"

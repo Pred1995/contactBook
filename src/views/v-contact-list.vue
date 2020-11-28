@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-add-contact @openModalWindow="openModalWindow" />
-    <div class="todo__list">
+    <div class="contact__list">
       <v-list-item
         v-for="item in items"
         :key="item.id"

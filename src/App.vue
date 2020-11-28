@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <div class="todo">
-      <div class="todo__header">
+    <div class="contact">
+      <div class="contact__header">
         <router-link to="/">
           <h4>Контакты</h4>
         </router-link>
@@ -33,5 +33,5 @@ export default {
 
 <style>
 @import "./assets/app.css";
-@import "./assets/snip.scss";
+@import "assets/contact.scss";
 </style>
