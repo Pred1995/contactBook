@@ -57,10 +57,13 @@ export default {
   components: { VContactWindowList },
   data: () => ({
     text: "",
-    updateText: "",
+    // текст в инпуте
     lastAction: "",
+    // последнее действие
     lastIndex: "",
+    // последний индекс
     lastText: ""
+    // последний текст
   }),
   computed: {
     id() {
@@ -72,7 +75,7 @@ export default {
       return this.$store.getters.contactById(+this.id);
     },
     contactItems() {
-      // получение задач контакта с помощью id
+      // получение элементов ключ:значение контакта с помощью id
       return this.$store.getters.contactItems(+this.id);
     }
   },
@@ -97,7 +100,7 @@ export default {
       this.lastAction = "";
     },
     resetDate({ index, updateText }) {
-      // обновляет историю, если пользователь редактировал задачу
+      // обновляет историю, если пользователь редактировал элемент ключ:значение
       this.lastIndex = index;
       this.lastText = updateText;
       this.lastAction = "updateItemContact";
@@ -107,7 +110,7 @@ export default {
       this.$forceUpdate();
     },
     async addItem() {
-      // добавление задачи
+      // добавление элемента ключ:значение
       if (this.text && this.text.indexOf(":") >= 0) {
         await this.$store.dispatch("addItemToContact", {
           value: this.text,
@@ -124,7 +127,7 @@ export default {
       }
     },
     async deleteItem(index) {
-      // удаление задачи
+      // удаление элемента ключ:значение
       this.lastText = this.contactItems[index];
       await this.$store.dispatch("deleteItemContact", {
         index: index,
@@ -134,9 +137,9 @@ export default {
       this.lastIndex = index;
     },
     async deleteItemContact(index, conf = true) {
-      // удаление задачи
+      // удаление элемента ключ:значение
       if (conf) {
-        if (confirm("Вы действительно хотите удалить данную задачу?"))
+        if (confirm("Вы действительно хотите удалить данный элемент?"))
           await this.deleteItem(index);
       } else {
         await this.deleteItem(index);

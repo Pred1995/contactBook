@@ -53,7 +53,7 @@ export default {
   watch: {},
   methods: {
     deleteItemContact(index) {
-      // функция удаление задачи из контакта
+      // функция удаление элемента ключ:значение из контакта
       this.$emit("deleteItemContact", index);
     },
     async updateItemContact() {
@@ -70,8 +70,9 @@ export default {
         });
         this.edit = false;
         this.$emit("update");
+        // ре-рендер компонента
       } else {
-        alert("Вы ввели текст не в правильном формате!");
+        alert("Вы ввели текст в не правильном формате!");
       }
     }
   }
