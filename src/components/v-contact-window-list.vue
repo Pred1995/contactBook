@@ -53,9 +53,11 @@ export default {
   watch: {},
   methods: {
     deleteItemContact(index) {
+      // функция удаление задачи из контакта
       this.$emit("deleteItemContact", index);
     },
     async updateItemContact() {
+      // функция обновления задачи
       if (this.updateText && this.updateText.indexOf(":") >= 0) {
         this.$emit("resetDate", {
           index: +this.index,

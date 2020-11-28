@@ -18,7 +18,7 @@
       />
     </div>
     <div class="contact-window__add">
-      <button class="btn-test" @click="addContact">Добавить</button>
+      <button class="btn-test" @click="addItem">Добавить</button>
     </div>
     <div class="contact-window__field">
       <v-contact-window-list
@@ -64,18 +64,22 @@ export default {
   }),
   computed: {
     id() {
+      // получение id из url
       return this.$route.params.id;
     },
     contact() {
+      // получение данных контакта с помощью id
       return this.$store.getters.contactById(+this.id);
     },
     contactItems() {
+      // получение задач контакта с помощью id
       return this.$store.getters.contactItems(+this.id);
     }
   },
   methods: {
     async back() {
-      if (this.lastAction === "addContact") {
+      // функция возврата к прежнему состоянию
+      if (this.lastAction === "addItem") {
         await this.deleteItemContact(this.lastIndex, false);
       } else if (this.lastAction === "deleteItemContact") {
         await this.$store.dispatch("addItemToContact", {
@@ -93,21 +97,24 @@ export default {
       this.lastAction = "";
     },
     resetDate({ index, updateText }) {
+      // обновляет историю, если пользователь редактировал задачу
       this.lastIndex = index;
       this.lastText = updateText;
       this.lastAction = "updateItemContact";
     },
     update() {
+      // ре-рендер компонента, вызывается в компоненте наследнике
       this.$forceUpdate();
     },
-    async addContact() {
+    async addItem() {
+      // добавление задачи
       if (this.text && this.text.indexOf(":") >= 0) {
         await this.$store.dispatch("addItemToContact", {
           value: this.text,
           id: +this.id
         });
         this.lastIndex = this.contactItems.indexOf(this.text);
-        this.lastAction = "addContact";
+        this.lastAction = "addItem";
         this.lastText = this.text;
         this.text = "";
       } else {
@@ -117,6 +124,7 @@ export default {
       }
     },
     async deleteItem(index) {
+      // удаление задачи
       this.lastText = this.contactItems[index];
       await this.$store.dispatch("deleteItemContact", {
         index: index,
@@ -126,6 +134,7 @@ export default {
       this.lastIndex = index;
     },
     async deleteItemContact(index, conf = true) {
+      // удаление задачи
       if (conf) {
         if (confirm("Вы действительно хотите удалить данную задачу?"))
           await this.deleteItem(index);

@@ -1,3 +1,7 @@
-FROM node:12.2.0-alpine
-
-RUN npm install -g @vue/cli
+FROM node:10-alpine
+ENV NPM_CONFIG_LOGLEVEL warn
+WORKDIR /usr/src/app
+COPY . .
+RUN npm set progress=false && npm install
+EXPOSE 8080
+CMD ["npm", "run", "serve"]

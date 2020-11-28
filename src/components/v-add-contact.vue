@@ -19,16 +19,7 @@
 
 <script>
 export default {
-  data: () => ({
-    text: ""
-  }),
   methods: {
-    addTask() {
-      if (this.text) {
-        this.$emit("onAddTask", this.text);
-        this.text = "";
-      }
-    },
     openModalWindow() {
       this.$emit("openModalWindow");
     }

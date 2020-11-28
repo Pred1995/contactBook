@@ -12,10 +12,7 @@
 
 <script>
 export default {
-  props: {
-    text: String,
-    index: Number
-  },
+  props: ["text", "index"],
   methods: {
     removeContact(index) {
       if (confirm("Вы действительно хотите контакт?")) {

@@ -27,9 +27,11 @@ export default {
   },
   methods: {
     openContactWindow(id) {
+      // открытие персональной страницы контакта
       this.$router.push("/contacts/" + id);
     },
     async onRemoveContact(index) {
+      // удаление контакта
       try {
         await this.$store.dispatch("deleteContact", index);
       } catch (e) {
@@ -37,6 +39,7 @@ export default {
       }
     },
     openModalWindow() {
+      // emit события открытия модального окна
       this.$emit("openModalWindow");
     }
   },

@@ -21,9 +21,11 @@ export default {
   }),
   methods: {
     openModalWindow() {
+      // открытие модального окна
       this.show = true;
     },
     closeModalWindow() {
+      // закрытие модального окна
       this.show = false;
     }
   },

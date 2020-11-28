@@ -7,7 +7,7 @@
       </slot>
       <slot name="body">
         <div class="modal-content">
-          <v-loader v-if="loading"/>
+          <v-loader v-if="loading" />
           <form @submit.prevent="onSub" v-else>
             <div class="modal-content-group">
               <input
@@ -34,8 +34,7 @@
                 class="modal-content-group__input-tel"
                 placeholder="8 (800) 555-35-35"
                 :class="{
-                  invalid:
-                    ($v.mobile.$dirty && !$v.mobile.required)
+                  invalid: $v.mobile.$dirty && !$v.mobile.required
                 }"
               />
               <small
@@ -65,7 +64,7 @@ import VLoader from "@/components/v-loader";
 export default {
   name: "v-form",
   props: ["show"],
-  components: {VLoader},
+  components: { VLoader },
   data: () => ({
     name: "",
     mobile: "",
@@ -73,6 +72,7 @@ export default {
   }),
   mounted() {
     setTimeout(() => {
+      // имитация загрущки
       this.loading = false;
     }, 500);
   },
@@ -84,20 +84,17 @@ export default {
       this.$emit("closeModalWindow");
     },
     async onSub() {
+      // функиця добавление контакта
       if (this.$v.$invalid) {
         this.$v.$touch();
         return;
       }
-      const formData = {
+      // валидация
+      await this.$store.dispatch("addContact", {
         name: this.name,
         mobile: this.mobile
-      };
-      try {
-        await this.$store.dispatch("addContact", formData);
-        this.closeModal();
-      } catch (e) {
-        console.log(e);
-      }
+      });
+      this.closeModal();
     }
   },
   validations: {
@@ -108,10 +105,9 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
 .modal-content-group {
   &__input-tel {
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     color: #333;
     font-size: 1.2rem;
     border: none;
@@ -122,7 +118,7 @@ export default {
     border-radius: 0.2rem;
   }
   &__input {
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     color: #333;
     font-size: 1.2rem;
     margin: 0 auto;
@@ -138,7 +134,7 @@ export default {
     transition: all 0.3s;
   }
   &__helper {
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     color: red;
   }
 }
